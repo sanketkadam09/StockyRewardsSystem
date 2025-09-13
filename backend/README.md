@@ -67,3 +67,48 @@ Integrate real stock price APIs instead of simulated ones
 Add user authentication and authorization
 
 Expand API documentation with examples and tests
+
+
+## API Testing Examples
+
+### POST `/api/rewards` - Create New Reward
+
+**Request:**
+POST http://localhost:5000/api/rewards
+Content-Type: application/json
+
+{
+"userId": "68c5023c06a021fc2a0d8190",
+"stockSymbol": "RELIANCE",
+"quantity": 5,
+"rewardType": "ONBOARDING",
+"rewardReason": "Welcome bonus"
+}
+
+
+**Response:**
+{
+"success": true,
+"message": "Reward created",
+"data": {
+"userId": "68c5023c06a021fc2a0d8190",
+"stockSymbol": "RELIANCE",
+"quantity": {
+"$numberDecimal": "5"
+},
+"priceAtReward": {
+"$numberDecimal": "2404.1534"
+},
+"totalValue": {
+"$numberDecimal": "12020.7670"
+},
+"rewardType": "ONBOARDING",
+"rewardReason": "Welcome bonus",
+"_id": "68c5026dbcfc2ffbd59682af",
+"createdAt": "2025-09-13T05:34:37.791Z",
+"__v": 0
+}
+}
+
+
+
