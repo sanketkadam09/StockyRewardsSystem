@@ -112,3 +112,33 @@ Content-Type: application/json
 
 
 
+### GET `/api/rewards/today-stocks/:userId` – Get Today’s Rewards for a User
+
+**Request**  
+
+GET http://localhost:5000/api/rewards/today-stocks/68c5023c06a021fc2a0d8190
+
+
+**Response**  
+
+{
+"success": true,
+"data": [
+{
+"_id": "68c5026dbcfc2ffbd59682af",
+"userId": "68c5023c06a021fc2a0d8190",
+"stockSymbol": "RELIANCE",
+"quantity": { "$numberDecimal": "5" },
+"priceAtReward": { "$numberDecimal": "2404.1534" },
+"totalValue": { "$numberDecimal": "12020.7670" },
+"rewardType": "ONBOARDING",
+"rewardReason": "Welcome bonus",
+"createdAt": "2025-09-13T05:34:37.791Z",
+"__v": 0
+}
+]
+}
+
+
+
+
