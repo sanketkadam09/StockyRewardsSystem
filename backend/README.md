@@ -1,0 +1,69 @@
+Stocky Backend
+
+Stocky Backend is my project to track users earning fractional shares of popular Indian stocks like Reliance, TCS, and Infosys. Users get these rewards for onboarding, referrals, or hitting milestones. The system handles reward events, updates stock prices regularly, and calculates real-time portfolio values, including internal company fees.
+
+Features
+
+Record rewards of fractional shares with precise decimal handling.
+
+Track brokerage, taxes, and regulatory fees internally.
+
+Update stock prices every 5 minutes using a mock service that simulates real market changes.
+
+REST APIs to create rewards, get today’s rewards, historical valuations, stats, and portfolio details.
+
+Tech Stack
+
+Node.js & Express – API server
+
+MongoDB & Mongoose – Database and schema validation
+
+Decimal128 – For precise fractional shares and INR values
+
+Middleware – Helmet for security, CORS for cross-origin support
+
+Setup & Installation
+
+Clone this repository.
+
+Run npm install to install dependencies.
+
+Create a .env file with:
+
+PORT=5000
+MONGODB_URI=<your_mongo_uri>
+
+
+Start the server: npm run dev
+
+Test the APIs using Postman or Hoppscotch with your MongoDB user IDs.
+
+API Endpoints
+
+POST /api/rewards – Record a stock reward event
+
+GET /api/rewards/today-stocks/:userId – Get today’s rewards for a user
+
+GET /api/rewards/historical-inr/:userId – Get historical INR portfolio values
+
+GET /api/rewards/stats/:userId – Get today’s total shares rewarded and current portfolio INR
+
+GET /api/rewards/portfolio/:userId – Get detailed portfolio holdings and valuation
+
+How It Works
+
+Reward events store user, stock, shares, price, and timestamp.
+
+Internal ledger tracks company fees (hidden from users).
+
+Background service updates stock prices every 5 minutes (simulated).
+
+APIs calculate portfolio value dynamically using latest prices and reward data.
+
+Future Improvements
+
+Integrate real stock price APIs instead of simulated ones
+
+Add user authentication and authorization
+
+Expand API documentation with examples and tests
